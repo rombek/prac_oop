@@ -3,6 +3,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Customer:
-    time_entered: int
     service_time: int
-    profit: int
+    remaining_service_time: int
+    purchase_cost: int
