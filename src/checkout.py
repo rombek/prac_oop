@@ -68,11 +68,13 @@ class Checkout:
         """
         remaining_time = tick_time
         self._average_queue_size -= (self._average_queue_size - len(self._queue)) / (self._total_ticks + 1)
-        while len(self._queue) != 0 and remaining_time >= self._queue[0].remaining_service_time:
-            remaining_time -= self._queue[0].remaining_service_time
+        while len(self._queue) != 0 and remaining_time >= self._queue[-1].remaining_service_time:
+            remaining_time -= self._queue[-1].remaining_service_time
             self._serve_customer()
         if len(self._queue) != 0:
-            self._queue[0].remaining_service_time -= remaining_time
+            self._queue[-1].remaining_service_time -= remaining_time
         else:
             self._total_waiting_time += remaining_time
         self._total_ticks += 1
+
+        logger.debug(f'Load at end of tick: {self._queue}')

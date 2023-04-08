@@ -5,11 +5,11 @@ class UIConfig:
     RESULTS_NAMES = {
         'total_served': 'Обслужено',
         'total_lost': 'Упущено',
-        'total_profit': 'Общая прибыль',
+        'total_profit': 'Общая прибыль (руб.)',
         'average_load': 'Средняя длина очереди',
-        'total_spent_ads': 'Потрачено на рекламу',
-        'total_spent_discount': 'Потрачено на скидки',
-        'total_spent_salaries': 'Потрачено на зарплаты',
+        'total_spent_ads': 'Потрачено на рекламу (руб.)',
+        'total_spent_discount': 'Потрачено на скидки (руб.)',
+        'total_spent_salaries': 'Потрачено на зарплаты (руб.)',
     }
     RESULTS_X: int = 1080
     RESULTS_Y: int = 50
